@@ -11520,16 +11520,16 @@ body {
     color: rgba(255, 255, 255, 0.75);
   }
   #mainNav .nav-link:active {
-    color: #fff;
+    color: #000;
   }
   #mainNav.navbar-shrink {
-    background-color: #fff;
+    background-color: #000;
   }
   #mainNav.navbar-shrink .navbar-brand {
-    color: #000;
+    color: #fff;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #000;
+    color: #fff;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
