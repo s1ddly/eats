@@ -11474,7 +11474,7 @@ body {
 
 #mainNav {
   min-height: 3.5rem;
-  background-color: #fff;
+  background-color: #000;
 }
 #mainNav .navbar-toggler {
   font-size: 80%;
@@ -11486,12 +11486,12 @@ body {
   outline: none;
 }
 #mainNav .navbar-brand {
-  color: #000;
+  color: rgba(255, 255, 255, 0.5);
   font-weight: 700;
   padding: 0.9rem 0;
 }
 #mainNav .navbar-nav .nav-item:hover {
-  color: fade(#fff, 80%);
+  color: fade(#000, 80%);
   outline: none;
   background-color: transparent;
 }
@@ -11520,7 +11520,7 @@ body {
     color: rgba(255, 255, 255, 0.75);
   }
   #mainNav .nav-link:active {
-    color: #000;
+    color: #fff;
   }
   #mainNav.navbar-shrink {
     background-color: #000;
@@ -11529,7 +11529,7 @@ body {
     color: #fff;
   }
   #mainNav.navbar-shrink .nav-link {
-    color: #fff;
+    color: #000;
     padding: 1.5rem 1.5rem 1.25rem;
     border-bottom: 0.25rem solid transparent;
   }
@@ -11565,7 +11565,7 @@ body {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url("../assets/img/bg-main.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
 }
 .masthead h1, .masthead .h1 {
@@ -11698,3 +11698,8 @@ body {
 .footer {
   padding: 5rem 0;
 }
+
+.item-hover{
+  transition: 0.3s;
+}
+.item-hover div:hover{background-color:gray;}
