@@ -24,7 +24,7 @@ function listing(instr, visited=true){
 			var rowdiv = document.createElement("div");
 			rowdiv.className = "row gx-0 justify-content-center";
 			var leftcol = document.createElement("div");
-			leftcol.className = "col-lg-6";
+			leftcol.className = "col-lg-3";
 			var leftimg = document.createElement("img");
 			leftimg.className = "img-fluid";
 			if(vals[11] == ""){
@@ -33,7 +33,7 @@ function listing(instr, visited=true){
 				leftimg.src = "assets/img/" + vals[11];
 			}
 			var rightcol = document.createElement("div");
-			rightcol.className = "col-lg-6 item-hover";
+			rightcol.className = "col-lg-9 item-hover";
 			var rightproj = document.createElement("div");
 			rightproj.className = "bg-black text-center h-100 project";
 			var rightproj = document.createElement("div");
