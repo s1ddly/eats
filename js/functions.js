@@ -7,14 +7,20 @@ function httpGet(theUrl)
 }
 
 function loadlist(){
-	listing(httpGet("list.csv"))
+	listing(httpGet("list.csv"));
 }
 
-function listing(instr){
+function listing(instr, visited=true){
+	document.getElementById("RestarauntList").innerHTML = "";
 	inlines = instr.split("\n");
 	for(let i = 1; i < inlines.length; i++){
 		if (inlines[i] != ""){
 			vals = inlines[i].split(",");
+			if(visited){
+				if(vals[1] != "Yes"){
+					continue;
+				}
+			}
 			var rowdiv = document.createElement("div");
 			rowdiv.className = "row gx-0 justify-content-center";
 			var leftcol = document.createElement("div");

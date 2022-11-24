@@ -33,7 +33,18 @@
                     </ul>
                 </div>
             </div>
-        </nav>		
+        </nav>	
+		<!-- Page Filter-->
+		<section class="projects-section bg-black" id="Filters" style="padding-top: 10%;padding-bottom: 0%">
+            <div class="container" id="Filters">
+                <div class="row" id="FilterList">
+					<div class="d-flex justify-content-center">
+						<a class="btn btn-secondary" onclick="listing(httpGet('list.csv'));">Visited Only</a>
+						<a class="btn btn-secondary" onclick="listing(httpGet('list.csv'),false);">All</a>
+					</div>
+                </div>
+            </div>
+        </section>
         <!-- Projects-->
         <section class="projects-section bg-black" id="Restaraunts">
             <div class="container px-4 px-lg-5" id="RestarauntList">
