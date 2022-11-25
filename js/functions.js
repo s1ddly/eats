@@ -26,7 +26,7 @@ function listing(instr, visited=true){
 			var leftcol = document.createElement("div");
 			leftcol.className = "col-lg-3";
 			var leftimg = document.createElement("img");
-			leftimg.className = "img-fluid";
+			leftimg.className = "img-fluid rounded";
 			if(vals[11] == ""){
 				leftimg.src = "assets/img/default-food.jpg"
 			} else {
