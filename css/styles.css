@@ -11710,3 +11710,7 @@ body {
   transition: 0.3s;
 }
 .item-hover div:hover{background-color:gray;}
+
+.divlink {
+  text-decoration: none;
+}
