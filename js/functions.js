@@ -21,6 +21,9 @@ function listing(instr, visited=true){
 					continue;
 				}
 			}
+			var linkdiv = document.createElement("a");
+			linkdiv.className = "divlink";
+			linkdiv.href = "detail.html?Restaraunt=" + encodeURI(vals[0])
 			var rowdiv = document.createElement("div");
 			rowdiv.className = "row gx-0 justify-content-center";
 			var leftcol = document.createElement("div");
@@ -47,7 +50,7 @@ function listing(instr, visited=true){
 			righthead.innerText = vals[0];
 			var rightpara = document.createElement("p");
 			rightpara.className = "mb-0 text-white-50";
-			rightpara.innerText = vals[6].replace("<comma>",",");
+			rightpara.innerText = vals[6].replaceAll("<comma>",",");
 			var righthr = document.createElement("hr");
 			righthr.className = "d-none d-lg-block mb-0 ms-0";
 			
@@ -61,7 +64,37 @@ function listing(instr, visited=true){
 			rightproj.append(rightflex);
 			rightcol.append(rightproj);
 			rowdiv.append(rightcol);
-			document.getElementById("RestarauntList").append(rowdiv);
+			linkdiv.append(rowdiv);
+			document.getElementById("RestarauntList").append(linkdiv);
+		}
+	}
+}
+
+function loaddetail(){
+	detail(httpGet("list.csv"));
+}
+
+function detail(instr){
+	console.log("yeet");
+	parms = new URLSearchParams(document.location.search);
+	restarauntid = parms.get("Restaraunt");
+	inlines = instr.split("\n");
+	for(let i = 1; i < inlines.length; i++){
+		if (inlines[i] != ""){
+			vals = inlines[i].split(",");
+			if (vals[0] != restarauntid){
+				continue;
+			} else {
+				document.getElementById("RestarauntTitle").innerText = vals[0];
+				document.getElementById("RestarauntLink").href = vals[9];
+				document.getElementById("RestarauntDecription").innerText = vals[6].replaceAll("<comma>",",");
+				document.getElementById("RestarauntReview").innerText = vals[7];
+				document.getElementById("RestarauntRating").innerText = vals[4];
+				document.getElementById("RestarauntCost").innerText = vals[5];
+				document.getElementById("RestarauntSuburb").innerText = vals[3];
+				document.getElementById("RestarauntTags").innerText = vals[8].replaceAll("|",",");
+				break;
+			}
 		}
 	}
 }
