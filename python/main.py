@@ -21,7 +21,7 @@ pageTemplate = """
         <link href="../css/styles.css" rel="stylesheet" />
 		<script src="../js/functions.js"></script>
     </head>
-    <body id="page-top" onload='loaddetail();'>
+    <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">
