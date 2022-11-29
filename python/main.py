@@ -32,8 +32,8 @@ pageTemplate = """
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="restaraunts.html">Restaraunts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../restaraunts.html">Restaraunts</a></li>
                         <li class="nav-item"><a class="nav-link" href="https://sidshardanand.com/">Contact</a></li>
                     </ul>
                 </div>
