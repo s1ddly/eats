@@ -23,7 +23,7 @@ function listing(instr, visited=true){
 			}
 			var linkdiv = document.createElement("a");
 			linkdiv.className = "divlink";
-			linkdiv.href = "detail.html?Restaraunt=" + encodeURI(vals[0])
+			linkdiv.href = "restaraunt/" + encodeURI(vals[0]) + ".html"
 			var rowdiv = document.createElement("div");
 			rowdiv.className = "row gx-0 justify-content-center";
 			var leftcol = document.createElement("div");
