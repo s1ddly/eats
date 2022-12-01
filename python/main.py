@@ -61,7 +61,7 @@ pageTemplate = """
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<iframe width="600" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="[Maps]">
+						<iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="[Maps]">
 						</iframe>
 					</div>
 				</div>
