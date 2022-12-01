@@ -68,7 +68,9 @@ pageTemplate = """
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2022</div></footer>
+        <footer class="footer bg-black small text-center text-white-50">
+			<div class="container px-4 px-lg-5"><p class="m-0 text-center text-white">This webpage was made using a <a href="https://startbootstrap.com/template/small-business" onMouseOver="this.style.color='#212529'" onMouseOut="this.style.color='#0d6efd'" target="_blank">Template</a> under the MIT <a href="https://github.com/StartBootstrap/startbootstrap-small-business/blob/master/LICENSE" onMouseOver="this.style.color='#212529'" onMouseOut="this.style.color='#0d6efd'" target="_blank">License</a></p></div>
+		</footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
