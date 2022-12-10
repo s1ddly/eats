@@ -53,6 +53,10 @@ function listing(instr, visited=true){
 			rightpara.innerText = vals[6].replaceAll("<comma>",",");
 			var righthr = document.createElement("hr");
 			righthr.className = "d-none d-lg-block mb-0 ms-0";
+			var rightsuburb = document.createElement("p");
+			rightsuburb.className = "mb-0 text-white-50";
+			rightsuburb.style["text-align"] = "left";
+			rightsuburb.innerText = vals[3]
 			
 			leftcol.append(leftimg);
 			rowdiv.append(leftcol);
@@ -60,6 +64,7 @@ function listing(instr, visited=true){
 			righttext.append(righthead);
 			righttext.append(rightpara);
 			righttext.append(righthr);
+			righttext.append(rightsuburb);
 			rightflex.append(righttext);
 			rightproj.append(rightflex);
 			rightcol.append(rightproj);
