@@ -38,9 +38,18 @@
 		<section class="projects-section bg-black" id="Filters">
             <div class="container" id="Filters">
                 <div class="row" id="FilterList">
-					<div class="d-flex justify-content-center">
-						<a class="btn btn-secondary" onclick="listing(httpGet('list.csv'));">Visited Only</a>
-						<a class="btn btn-secondary" onclick="listing(httpGet('list.csv'),false);">All</a>
+					<div class="d-flex flex-wrap justify-content-center">
+						<div class="btn-group my-1 mx-2" role="group" aria-label="Visited">
+							<button type="button" class="btn btn-secondary" onclick="visitedany();">Any</a>
+							<button type="button" class="btn btn-secondary" onclick="visitedonly();">Visited</a>
+							<button type="button" class="btn btn-secondary" onclick="visitedun();">Unvisited</a>
+						</div>
+						<div class="btn-group my-1 mx-2" role="group" aria-label="Cost">
+							<button type="button" class="btn btn-secondary" onclick="costany();">Any</button>
+							<button type="button" class="btn btn-secondary" onclick="costone();">$</button>
+							<button type="button" class="btn btn-secondary" onclick="costtwo();">$$</button>
+							<button type="button" class="btn btn-secondary" onclick="costthree();">$$$</button>
+						</div>
 					</div>
                 </div>
             </div>
