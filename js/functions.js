@@ -1,4 +1,4 @@
-searchFilter = [1, 0];
+var searchFilter = [1, 0];
 
 function httpGet(theUrl)
 {
@@ -35,7 +35,7 @@ function listing(instr, searchfilter){
 				default:
 					break;
 			}
-
+			//Below filters restaraunts based on cost indicator
 			switch(price){
 				case 1:
 					if(vals[5] != "$"){
@@ -109,37 +109,6 @@ function listing(instr, searchfilter){
 		}
 	}
 }
-
-
-/*
-function loaddetail(){
-	detail(httpGet("list.csv"));
-}
-
-function detail(instr){
-	console.log("yeet");
-	parms = new URLSearchParams(document.location.search);
-	restarauntid = parms.get("Restaraunt");
-	inlines = instr.split("\n");
-	for(let i = 1; i < inlines.length; i++){
-		if (inlines[i] != ""){
-			vals = inlines[i].split(",");
-			if (vals[0] != restarauntid){
-				continue;
-			} else {
-				document.getElementById("RestarauntTitle").innerText = vals[0];
-				document.getElementById("RestarauntLink").href = vals[9];
-				document.getElementById("RestarauntDecription").innerText = vals[6].replaceAll("<comma>",",");
-				document.getElementById("RestarauntReview").innerText = vals[7];
-				document.getElementById("RestarauntRating").innerText = vals[4];
-				document.getElementById("RestarauntCost").innerText = vals[5];
-				document.getElementById("RestarauntSuburb").innerText = vals[3];
-				document.getElementById("RestarauntTags").innerText = vals[8].replaceAll("|",",");
-				break;
-			}
-		}
-	}
-}*/
 
 //Filter functions below
 function visitedany(){
