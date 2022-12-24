@@ -35,14 +35,27 @@ function listing(instr, searchfilter){
 				default:
 					break;
 			}
-			/*if(visited){
-				if(vals[1] != "Yes"){
-					continue;
-				}
+
+			switch(price){
+				case 1:
+					if(vals[5] != "$"){
+						continue;
+					}
+					break;
+				case 2:
+					if(vals[5] != "$$"){
+						continue;
+					}
+					break;
+				case 3:
+					if(vals[5] != "$$$"){
+						continue;
+					}
+					break;
+				default:
+					break;
 			}
-			if(price != 0){
-				
-			}*/
+			
 			var linkdiv = document.createElement("a");
 			linkdiv.className = "divlink";
 			linkdiv.href = "restaraunt/" + encodeURI(vals[0]) + ".html"
@@ -141,5 +154,30 @@ function visitedonly(){
 
 function visitedun(){
 	searchFilter[0] = 2;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function visitedun(){
+	searchFilter[0] = 2;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function costany(){
+	searchFilter[1] = 0;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function costone(){
+	searchFilter[1] = 1;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function costtwo(){
+	searchFilter[1] = 2;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function costthree(){
+	searchFilter[1] = 3;
 	listing(httpGet("list.csv"), searchFilter);
 }
