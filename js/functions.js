@@ -1,3 +1,5 @@
+searchFilter = [1, 0];
+
 function httpGet(theUrl)
 {
 	var xmlHttp = new XMLHttpRequest();
@@ -7,20 +9,40 @@ function httpGet(theUrl)
 }
 
 function loadlist(){
-	listing(httpGet("list.csv"));
+	listing(httpGet("list.csv"), searchFilter);
 }
 
-function listing(instr, visited=true){
+function listing(instr, searchfilter){
+	visited = searchfilter[0];
+	price = searchfilter[1];
 	document.getElementById("RestarauntList").innerHTML = "";
 	inlines = instr.split("\n");
 	for(let i = 1; i < inlines.length; i++){
 		if (inlines[i] != ""){
 			vals = inlines[i].split(",");
-			if(visited){
+			//Below filters restaraunts based on visited status
+			switch(visited){
+				case 1:
+					if(vals[1] != "Yes"){
+						continue;
+					}
+					break;
+				case 2:
+					if(vals[1] != ""){
+						continue;
+					}
+					break;
+				default:
+					break;
+			}
+			/*if(visited){
 				if(vals[1] != "Yes"){
 					continue;
 				}
 			}
+			if(price != 0){
+				
+			}*/
 			var linkdiv = document.createElement("a");
 			linkdiv.className = "divlink";
 			linkdiv.href = "restaraunt/" + encodeURI(vals[0]) + ".html"
@@ -75,6 +97,8 @@ function listing(instr, visited=true){
 	}
 }
 
+
+/*
 function loaddetail(){
 	detail(httpGet("list.csv"));
 }
@@ -102,4 +126,20 @@ function detail(instr){
 			}
 		}
 	}
+}*/
+
+//Filter functions below
+function visitedany(){
+	searchFilter[0] = 0;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function visitedonly(){
+	searchFilter[0] = 1;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function visitedun(){
+	searchFilter[0] = 2;
+	listing(httpGet("list.csv"), searchFilter);
 }
