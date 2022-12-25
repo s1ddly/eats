@@ -10,7 +10,6 @@ function httpGet(theUrl)
 
 function loadlist(){
 	listing(httpGet("list.csv"), searchFilter);
-	populateSuburbs(httpGet("list.csv"));
 }
 
 function listing(instr, searchfilter){
@@ -120,41 +119,43 @@ function listing(instr, searchfilter){
 
 //Filter functions below
 function visitedany(){
+	setVisited("Visited");
 	searchFilter[0] = 0;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function visitedonly(){
+	setVisited("Visited Only");
 	searchFilter[0] = 1;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function visitedun(){
-	searchFilter[0] = 2;
-	listing(httpGet("list.csv"), searchFilter);
-}
-
-function visitedun(){
+	setVisited("Un-Visited");
 	searchFilter[0] = 2;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function costany(){
+	setCost("Cost");
 	searchFilter[1] = 0;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function costone(){
+	setCost("$");
 	searchFilter[1] = 1;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function costtwo(){
+	setCost("$$");
 	searchFilter[1] = 2;
 	listing(httpGet("list.csv"), searchFilter);
 }
 
 function costthree(){
+	setCost("$$$");
 	searchFilter[1] = 3;
 	listing(httpGet("list.csv"), searchFilter);
 }
@@ -162,4 +163,13 @@ function costthree(){
 function suburbSearch(){
 	searchFilter[2] = document.getElementById("searchSuburbField").value
 	listing(httpGet("list.csv"), searchFilter);
+}
+
+//Visual editor functions
+function setVisited(buttonValue){
+	document.getElementById("dropdownMenuButtonVisited").innerText = buttonValue
+}
+
+function setCost(buttonValue){
+	document.getElementById("dropdownMenuButtonCost").innerText = buttonValue
 }
