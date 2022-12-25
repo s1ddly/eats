@@ -1,4 +1,4 @@
-var searchFilter = [1, 0];
+var searchFilter = [1, 0, ""];
 
 function httpGet(theUrl)
 {
@@ -10,11 +10,13 @@ function httpGet(theUrl)
 
 function loadlist(){
 	listing(httpGet("list.csv"), searchFilter);
+	populateSuburbs(httpGet("list.csv"));
 }
 
 function listing(instr, searchfilter){
 	visited = searchfilter[0];
 	price = searchfilter[1];
+	suburb = searchfilter[2];
 	document.getElementById("RestarauntList").innerHTML = "";
 	inlines = instr.split("\n");
 	for(let i = 1; i < inlines.length; i++){
@@ -55,6 +57,12 @@ function listing(instr, searchfilter){
 				default:
 					break;
 			}
+			//Below filters based off the search input value
+			if(suburb != "") {
+				if(!vals[3].toLowerCase().includes(suburb.toLowerCase())) {
+					continue
+				}
+			} 
 			
 			var linkdiv = document.createElement("a");
 			linkdiv.className = "divlink";
@@ -148,5 +156,10 @@ function costtwo(){
 
 function costthree(){
 	searchFilter[1] = 3;
+	listing(httpGet("list.csv"), searchFilter);
+}
+
+function suburbSearch(){
+	searchFilter[2] = document.getElementById("searchSuburbField").value
 	listing(httpGet("list.csv"), searchFilter);
 }
