@@ -40,7 +40,7 @@
                 <div class="row" id="FilterList">
 					<div class="d-flex flex-wrap justify-content-center">
 						<div class="dropdown my-1 mx-2">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonVisited" data-bs-toggle="dropdown" aria-expanded="false">
 								Visited
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonVisited">
@@ -50,7 +50,7 @@
 							</ul>
 						</div>
 						<div class="dropdown my-1 mx-2">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonCost" data-bs-toggle="dropdown" aria-expanded="false">
 								Cost
 							</button>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButtonCost">
@@ -60,14 +60,14 @@
 								<li><a class="dropdown-item" onclick="costthree();">$$$</a></li>
 							</ul>
 						</div>
-						<!--<div class="dropdown my-1 mx-2">
-							<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-							Suburb
+						<div class="mx-2 my-1">
+							<div class="form-outline d-inline-block h-100">
+								<input type="search" id="searchSuburbField" class="form-control h-100" placeholder="Suburb Search" />
+							</div>
+							<button type="button" class="btn btn-secondary mx-1 d-inline-block" onclick="suburbSearch();">
+								<i class="fas fa-search"></i>
 							</button>
-							<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-								<li><a class="dropdown-item" href="#">Action</a></li>
-							</ul>
-						</div>-->
+						</div>
 					</div>
                 </div>
             </div>
